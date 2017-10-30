@@ -18,5 +18,4 @@ Pod::Spec.new do |s|
   s.frameworks  = "Foundation"
   s.dependency "Alamofire"
   s.dependency "CodableAlamofire"
-  s.dependency "KeychainAccess"
 end
