@@ -11,7 +11,6 @@ import Alamofire
 import AlamofireCodable
 
 enum FyydApiError: Error {
-    case missingAccessToken
     case missingId
     case curationNotDeletable
 }
@@ -43,11 +42,7 @@ public struct FyydKit {
         return decoder
     }
     
-    public static func remove(episode: Episode, fromCuration curation: Curation, complete: @escaping (_ error: Error?) -> Void) {
-        guard let token = FyydAuthentication.shared.accessToken else {
-            complete(FyydApiError.missingAccessToken)
-            return
-        }
+    public static func remove(episode: Episode, fromCuration curation: Curation, authToken: String, complete: @escaping (_ error: Error?) -> Void) {
         
         let parameters: Parameters = [
             "episode_id": episode.id,
@@ -55,7 +50,7 @@ public struct FyydKit {
             "force_state": false
         ]
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(token)"
+            "Authorization": "Bearer \(authToken)"
         ]
         Alamofire.request("\(baseUrl)/curate", method: .post, parameters: parameters, headers: headers).validate().response { response in
             if let error = response.error {
@@ -68,11 +63,7 @@ public struct FyydKit {
         }
     }
     
-    public static func add(episode: Episode, toCuration curation: Curation, withMessage message: String?, complete: @escaping (_ error: Error?) -> Void) {
-        guard let token = FyydAuthentication.shared.accessToken else {
-            complete(FyydApiError.missingAccessToken)
-            return
-        }
+    public static func add(episode: Episode, toCuration curation: Curation, withMessage message: String?, authToken: String, complete: @escaping (_ error: Error?) -> Void) {
         
         var parameters: Parameters = [
             "episode_id": episode.id,
@@ -83,7 +74,7 @@ public struct FyydKit {
             parameters["why"] = message!
         }
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(token)"
+            "Authorization": "Bearer \(authToken)"
         ]
         Alamofire.request("\(baseUrl)/curate", method: .post, parameters: parameters, headers: headers).validate().response { response in
             if let error = response.error {
@@ -96,14 +87,10 @@ public struct FyydKit {
         }
     }
     
-    public static func fetchAuthorizedUser(complete: @escaping (_ user: User?) -> Void) {
-        guard let token = FyydAuthentication.shared.accessToken else {
-            complete(nil)
-            return
-        }
+    public static func fetchAuthorizedUserFor(authToken: String, complete: @escaping (_ user: User?) -> Void) {
         
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(token)"
+            "Authorization": "Bearer \(authToken)"
         ]
         
         let url = URL(string: "\(baseUrl)/account/info")!
@@ -133,18 +120,14 @@ public struct FyydKit {
         }
     }
     
-    public static func create(curation: Curation, coverartImage: UIImage? = nil, complete: @escaping (_ curation: Curation?) -> Void) {
-        update(curation: curation, coverartImage: coverartImage, complete: complete)
+    public static func create(curation: Curation, coverartImage: UIImage? = nil, authToken: String, complete: @escaping (_ curation: Curation?) -> Void) {
+        update(curation: curation, coverartImage: coverartImage, authToken: authToken, complete: complete)
     }
     
-    public static func update(curation: Curation, coverartImage: UIImage? = nil, complete: @escaping (_ curation: Curation?) -> Void) {
-        guard let token = FyydAuthentication.shared.accessToken else {
-            complete(nil)
-            return
-        }
+    public static func update(curation: Curation, coverartImage: UIImage? = nil, authToken: String, complete: @escaping (_ curation: Curation?) -> Void) {
         
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(token)"
+            "Authorization": "Bearer \(authToken)"
         ]
         
         guard let title = curation.title, let description = curation.description else {
@@ -195,19 +178,14 @@ public struct FyydKit {
         }
     }
     
-    public static func destroy(curation: Curation, complete: @escaping (_ error: Error?) -> Void) {
+    public static func destroy(curation: Curation, authToken: String, complete: @escaping (_ error: Error?) -> Void) {
         if !curation.isDeletable {
             complete(FyydApiError.curationNotDeletable)
             return
         }
         
-        guard let token = FyydAuthentication.shared.accessToken else {
-            complete(nil)
-            return
-        }
-        
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(token)"
+            "Authorization": "Bearer \(authToken)"
         ]
         
         let parameters: Parameters = ["curation_id": curation.id]
@@ -326,9 +304,9 @@ public struct FyydKit {
         })
     }
     
-    public static func fetchCurationWith(id: Int, includingEpisodes: Bool = false, complete: @escaping (_ curation: Curation?) -> Void) {
+    public static func fetchCurationWith(id: Int, includingEpisodes: Bool = false, authToken: String? = nil, complete: @escaping (_ curation: Curation?) -> Void) {
         var headers: HTTPHeaders = [String : String]()
-        if let token = FyydAuthentication.shared.accessToken {
+        if let token = authToken {
             headers["Authorization"] = "Bearer \(token)"
         }
         
@@ -375,14 +353,10 @@ public struct FyydKit {
         })
     }
     
-    public static func fetchAuthorizedUserCurations(complete: @escaping (_ curations: [Curation]) -> Void) {
-        guard let token = FyydAuthentication.shared.accessToken else {
-            complete([])
-            return
-        }
+    public static func fetchAuthorizedUserCurations(authToken: String, complete: @escaping (_ curations: [Curation]) -> Void) {
         
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(token)"
+            "Authorization": "Bearer \(authToken)"
         ]
         
         Alamofire.request("\(baseUrl)/account/curations", headers: headers).validate().responseDecodableObject(queue: nil, keyPath: "data", decoder: decoder, completionHandler: { (response: DataResponse<[Curation]>) in
