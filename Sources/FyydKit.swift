@@ -29,8 +29,8 @@ extension FyydApiError: LocalizedError {
 
 public struct FyydKit {
     
-    private static let baseUrl = "https://api.fyyd.de/0.2"
-    public static let defaultResultCount = 20
+    private static let apiVersion = "0.2"
+    private static let baseUrl = "https://api.fyyd.de/\(apiVersion)"
     public static var defaultResultCount = 20
     
     private static var decoder: JSONDecoder {
