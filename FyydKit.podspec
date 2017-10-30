@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version      = "0.1"
   s.summary      = ""
   s.description  = <<-DESC
-    Your description here.
+    Swift implementation of the fyyd API.
   DESC
   s.homepage     = "https://github.com/funkenstrahlen/FyydKit.git"
   s.license      = { :type => "MIT", :file => "LICENSE" }
