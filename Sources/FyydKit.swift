@@ -19,8 +19,6 @@ extension FyydApiError: LocalizedError {
     public var errorDescription: String? {
         let bundle = Bundle(identifier: "de.stefantrauth.Fyyd")!
         switch self {
-        case .missingAccessToken:
-            return NSLocalizedString("missing access token", bundle: bundle, value: "Missing access token", comment: "missing access token")
         case .missingId:
             return NSLocalizedString("missing id", bundle: bundle, value: "Missing element id", comment: "missing element id")
         case .curationNotDeletable:
