@@ -148,6 +148,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		226F508C1FA7686E0003234C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				226F50681FA765590003234C /* Curation.swift */,
+				226F50641FA765590003234C /* Episode.swift */,
+				226F506B1FA765590003234C /* User.swift */,
+				226F506A1FA765590003234C /* Podcast.swift */,
+				226F50661FA765590003234C /* ItunesCategory.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
@@ -184,12 +196,8 @@
 		8933C7811EB5B7E0000D00A4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				226F50681FA765590003234C /* Curation.swift */,
-				226F50641FA765590003234C /* Episode.swift */,
-				226F50661FA765590003234C /* ItunesCategory.swift */,
-				226F506A1FA765590003234C /* Podcast.swift */,
+				226F508C1FA7686E0003234C /* Model */,
 				226F50651FA765590003234C /* SubscribeHelper.swift */,
-				226F506B1FA765590003234C /* User.swift */,
 				226F50671FA765590003234C /* UserManager.swift */,
 				8933C7841EB5B820000D00A4 /* FyydKit.swift */,
 			);
