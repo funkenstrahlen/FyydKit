@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.12"
   s.watchos.deployment_target = "3.0"
   s.tvos.deployment_target = "10.0"
-  s.source       = { :git => "https://github.com/funkenstrahlen/FyydKit.git.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/funkenstrahlen/FyydKit.git", :tag => s.version.to_s }
   s.source_files  = "Sources/**/*"
   s.frameworks  = "Foundation", "SafariServices"
   s.dependency "Alamofire"
