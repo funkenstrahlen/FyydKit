@@ -197,9 +197,9 @@
 			isa = PBXGroup;
 			children = (
 				8933C7841EB5B820000D00A4 /* FyydKit.swift */,
+				226F50671FA765590003234C /* FyydAuthentication.swift */,
 				226F508C1FA7686E0003234C /* Model */,
 				226F50651FA765590003234C /* SubscribeHelper.swift */,
-				226F50671FA765590003234C /* FyydAuthentication.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
