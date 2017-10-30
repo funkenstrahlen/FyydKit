@@ -1,6 +1,6 @@
 //
 //  Podcast.swift
-//  Fyyd
+//  FyydKit
 //
 //  Created by Stefan Trauth on 30.07.17.
 //  Copyright © 2017 Stefan Trauth. All rights reserved.

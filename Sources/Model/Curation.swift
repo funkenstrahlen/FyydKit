@@ -1,6 +1,6 @@
 //
 //  Curation.swift
-//  Skoon
+//  FyydKit
 //
 //  Created by Stefan Trauth on 23.06.17.
 //  Copyright © 2017 Stefan Trauth. All rights reserved.
