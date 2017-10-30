@@ -35,8 +35,6 @@ public struct FyydKit {
     
     private static var decoder: JSONDecoder {
         let decoder = JSONDecoder()
-        //        let dateFormatter = DateFormatter()
-        //        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss" // "2017-04-14 15:05:11"
         decoder.dateDecodingStrategy = .iso8601
         return decoder
     }
