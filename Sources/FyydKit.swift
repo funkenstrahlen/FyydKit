@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Alamofire
+import AlamofireCodable
 
 enum FyydApiError: Error {
     case missingAccessToken
