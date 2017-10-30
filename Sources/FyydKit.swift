@@ -244,59 +244,6 @@ public struct FyydKit {
         })
     }
     
-    public static func fetchMatchingEpisodes(url: URL, complete: @escaping (_ episodes: [Episode]) -> Void) {
-        guard let host = url.host else {
-            complete([])
-            return
-        }
-        
-        var crawler: Crawler?
-        
-        switch host {
-        case PocketCastsCrawler.host: crawler = PocketCastsCrawler()
-        case OvercastCrawler.host: crawler = OvercastCrawler()
-        case ApplePodcastsCrawler.host: crawler = ApplePodcastsCrawler()
-        case CastroCrawler.host: crawler = CastroCrawler()
-        case "fyyd.de":
-            // ["/", "episode", "1675949"]
-            if url.pathComponents.contains("episode") {
-                if let episodeId = Int(url.lastPathComponent) {
-                    fetchEpisodeWith(id: episodeId, complete: { (episode) in
-                        if let episode = episode {
-                            complete([episode])
-                        } else {
-                            complete([])
-                        }
-                    })
-                } else {
-                    complete([])
-                }
-            } else {
-                complete([])
-            }
-            return
-        default:
-            // if host is unknown try to find a matching episode by searching for the episode url directly
-            // this will work for Podcat and also for sharing directly from Safari if the user is currently
-            // on the website of a podcast episode
-            Fyyd.searchForEpisodesWith(url: url.absoluteString, complete: { (matchingEpisodes) in
-                complete(matchingEpisodes)
-            })
-            return
-        }
-        
-        // this is sure not nil
-        crawler!.crawlWebsite(url: url, complete: { (episodeMetadata) in
-            guard let metadata = episodeMetadata else {
-                complete([])
-                return
-            }
-            Fyyd.searchForEpisodesWith(title: metadata.title, url: url.absoluteString, complete: { (matchingEpisodes) in
-                complete(matchingEpisodes)
-            })
-        })
-    }
-    
     public static func searchForCurationsBy(term: String, andCategory category: ItunesCategory? = nil, resultCount: Int = defaultResultCount, complete: @escaping (_ curations: [Curation]) -> Void) {
         var parameters: Parameters = ["term": term, "count": resultCount]
         if category != nil {
