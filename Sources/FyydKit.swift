@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-import AlamofireCodable
+import CodableAlamofire
 
 enum FyydApiError: Error {
     case missingId
