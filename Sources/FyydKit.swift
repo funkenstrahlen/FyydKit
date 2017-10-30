@@ -31,6 +31,7 @@ public struct FyydKit {
     
     private static let baseUrl = "https://api.fyyd.de/0.2"
     public static let defaultResultCount = 20
+    public static var defaultResultCount = 20
     
     private static var decoder: JSONDecoder {
         let decoder = JSONDecoder()
