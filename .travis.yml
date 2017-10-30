@@ -3,13 +3,13 @@ matrix:
     - script:
         - swiftlint lint --strict
         - set -o pipefail
-        - xcodebuild $XCODE_ACTION $WORKSPACE -scheme "SWXMLHash OSX" | xcpretty
-        - xcodebuild $XCODE_ACTION $WORKSPACE -scheme "SWXMLHash iOS" -sdk iphonesimulator -destination "OS=11.0,name=iPhone 7" | xcpretty
-        - xcodebuild $XCODE_ACTION $WORKSPACE -scheme "SWXMLHash tvOS" -sdk appletvsimulator -destination "name=Apple TV 1080p" | xcpretty
-        - xcodebuild build $WORKSPACE -scheme "SWXMLHash watchOS" -sdk watchsimulator | xcpretty
+        - xcodebuild $XCODE_ACTION $WORKSPACE -scheme "FyydKit OSX" | xcpretty
+        - xcodebuild $XCODE_ACTION $WORKSPACE -scheme "FyydKit iOS" -sdk iphonesimulator -destination "OS=10.0,name=iPhone 7" | xcpretty
+        - xcodebuild $XCODE_ACTION $WORKSPACE -scheme "FyydKit tvOS" -sdk appletvsimulator -destination "name=Apple TV 1080p" | xcpretty
+        - xcodebuild build $WORKSPACE -scheme "FyydKit watchOS" -sdk watchsimulator | xcpretty
       env:
         - JOB=Xcode
-        - WORKSPACE="-workspace SWXMLHash.xcworkspace"
+        - WORKSPACE="-workspace FyydKit.xcworkspace"
         - XCODE_ACTION="build-for-testing test-without-building"
       os: osx
       osx_image: xcode9
@@ -52,7 +52,7 @@ matrix:
       language: generic
       install:
         - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)"
-after_success:
-  - gem install slather
-  - slather
-  - bash <(curl -s https://codecov.io/bash) -f Coverage/cobertura.xml
+# after_success:
+#   - gem install slather
+#   - slather
+#   - bash <(curl -s https://codecov.io/bash) -f Coverage/cobertura.xml
