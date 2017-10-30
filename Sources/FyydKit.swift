@@ -10,12 +10,13 @@ import Foundation
 import Alamofire
 import CodableAlamofire
 
-enum FyydApiError: Error {
+enum FyydKitError: Error {
     case missingId
     case curationNotDeletable
+    case missingMetadata
 }
 
-extension FyydApiError: LocalizedError {
+extension FyydKitError: LocalizedError {
     public var errorDescription: String? {
         let bundle = Bundle(identifier: "de.stefantrauth.Fyyd")!
         switch self {
@@ -23,7 +24,11 @@ extension FyydApiError: LocalizedError {
             return NSLocalizedString("missing id", bundle: bundle, value: "Missing element id", comment: "missing element id")
         case .curationNotDeletable:
             return NSLocalizedString("curation not deletable", bundle: bundle, value: "This curation can not be deleted because it is your personal curation.", comment: "curation not deletable")
+        case .missingMetadata:
+            return NSLocalizedString("missing metadata", bundle: bundle, value: "missing metadata", comment: "missing metadata")
         }
+        
+        
     }
 }
 
@@ -40,7 +45,6 @@ public struct FyydKit {
     }
     
     public static func remove(episode: Episode, fromCuration curation: Curation, authToken: String, complete: @escaping (_ error: Error?) -> Void) {
-        
         let parameters: Parameters = [
             "episode_id": episode.id,
             "curation_id": curation.id,
@@ -51,8 +55,6 @@ public struct FyydKit {
         ]
         Alamofire.request("\(baseUrl)/curate", method: .post, parameters: parameters, headers: headers).validate().response { response in
             if let error = response.error {
-                print(error.localizedDescription)
-                debugPrint(response)
                 complete(error)
                 return
             }
@@ -61,7 +63,6 @@ public struct FyydKit {
     }
     
     public static func add(episode: Episode, toCuration curation: Curation, withMessage message: String?, authToken: String, complete: @escaping (_ error: Error?) -> Void) {
-        
         var parameters: Parameters = [
             "episode_id": episode.id,
             "curation_id": curation.id,
@@ -75,8 +76,6 @@ public struct FyydKit {
         ]
         Alamofire.request("\(baseUrl)/curate", method: .post, parameters: parameters, headers: headers).validate().response { response in
             if let error = response.error {
-                print(error.localizedDescription)
-                debugPrint(response)
                 complete(error)
                 return
             }
@@ -84,55 +83,41 @@ public struct FyydKit {
         }
     }
     
-    public static func fetchAuthorizedUserFor(authToken: String, complete: @escaping (_ user: User?) -> Void) {
-        
+    public static func fetchAuthorizedUserFor(authToken: String, complete: @escaping (_ user: User?, _ error: Error?) -> Void) {
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(authToken)"
         ]
-        
         let url = URL(string: "\(baseUrl)/account/info")!
         
         Alamofire.request(url, headers: headers).validate().responseDecodableObject(queue: nil, keyPath: "data", decoder: decoder) { (response: DataResponse<User>) in
-            if let error = response.error {
-                print(error.localizedDescription)
-                debugPrint(response)
-            }
-            
             let user = response.result.value
-            complete(user)
+            complete(user, response.error)
         }
     }
     
-    public static func fetchPublicUserWith(id: Int, complete: @escaping (_ user: User?) -> Void) {
+    public static func fetchPublicUserWith(id: Int, complete: @escaping (_ user: User?, _ error: Error?) -> Void) {
         let url = URL(string: "\(baseUrl)/user")!
-        
         Alamofire.request(url, parameters: ["user_id": id]).validate().responseDecodableObject(queue: nil, keyPath: "data", decoder: decoder) { (response: DataResponse<User>) in
-            if let error = response.error {
-                print(error.localizedDescription)
-                debugPrint(response)
-            }
-            
             let user = response.result.value
-            complete(user)
+            complete(user, response.error)
         }
     }
     
-    public static func create(curation: Curation, coverartImage: UIImage? = nil, authToken: String, complete: @escaping (_ curation: Curation?) -> Void) {
+    public static func create(curation: Curation, coverartImage: UIImage? = nil, authToken: String, complete: @escaping (_ curation: Curation?, _ error: Error?) -> Void) {
         update(curation: curation, coverartImage: coverartImage, authToken: authToken, complete: complete)
     }
     
-    public static func update(curation: Curation, coverartImage: UIImage? = nil, authToken: String, complete: @escaping (_ curation: Curation?) -> Void) {
-        
+    public static func update(curation: Curation, coverartImage: UIImage? = nil, authToken: String, complete: @escaping (_ curation: Curation?, _ error: Error?) -> Void) {
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(authToken)"
         ]
         
         guard let title = curation.title, let description = curation.description else {
-            complete(nil)
+            complete(nil, FyydKitError.missingMetadata)
             return
         }
         
-        // this must be String:String instead of Parameters type to use value.data later in multipart upload
+        // this is String:String instead of Parameters type to use value.data later in multipart upload
         var parameters: [String: String] = [
             "title": title,
             "description": description,
@@ -156,28 +141,23 @@ public struct FyydKit {
                 switch encodingResult {
                 case .success(let upload, _, _):
                     upload.responseDecodableObject(queue: nil, keyPath: "data", decoder: decoder, completionHandler: { (response: DataResponse<Curation>) in
-                        complete(response.result.value)
+                        complete(response.result.value, response.error)
                     })
                 case .failure(let encodingError):
-                    print(encodingError)
-                    complete(nil)
+                    complete(nil, encodingError)
                 }
             }
         } else {
             // Just do a simple post and do not upload any image
             Alamofire.request(url, method: .post, parameters: parameters, headers: headers).validate().responseDecodableObject(queue: nil, keyPath: "data", decoder: decoder, completionHandler: { (response: DataResponse<Curation>) in
-                if let error = response.error {
-                    print(error.localizedDescription)
-                    debugPrint(response)
-                }
-                complete(response.result.value)
+                complete(response.result.value, response.error)
             })
         }
     }
     
     public static func destroy(curation: Curation, authToken: String, complete: @escaping (_ error: Error?) -> Void) {
         if !curation.isDeletable {
-            complete(FyydApiError.curationNotDeletable)
+            complete(FyydKitError.curationNotDeletable)
             return
         }
         
@@ -187,60 +167,39 @@ public struct FyydKit {
         
         let parameters: Parameters = ["curation_id": curation.id]
         Alamofire.request("\(baseUrl)/curation/delete", method: .post, parameters: parameters, headers: headers).validate().response { response in
-            if let error = response.error {
-                print(error.localizedDescription)
-                debugPrint(response)
-                complete(error)
-            } else {
-                complete(nil)
-            }
+            complete(response.error)
         }
     }
     
-    public static func fetchPodcastWith(id: Int, includeEpisodes: Bool = true, complete: @escaping (_ podcast: Podcast?) -> Void) {
+    public static func fetchPodcastWith(id: Int, includeEpisodes: Bool = true, complete: @escaping (_ podcast: Podcast?, _ error: Error?) -> Void) {
         let parameters : Parameters = ["podcast_id": id]
         let url = includeEpisodes ? URL(string: "\(baseUrl)/podcast/episodes")! : URL(string: "\(baseUrl)/podcast")!
         Alamofire.request(url, parameters: parameters).validate().responseDecodableObject(queue: nil, keyPath: "data", decoder: decoder, completionHandler: { (response: DataResponse<Podcast>) in
-            if let error = response.error {
-                print(error.localizedDescription)
-                debugPrint(response)
-            }
-            complete(response.result.value)
+            complete(response.result.value, response.error)
         })
     }
     
-    public static func fetchEpisodeWith(id: Int, complete: @escaping (_ episode: Episode?) -> Void) {
+    public static func fetchEpisodeWith(id: Int, complete: @escaping (_ episode: Episode?, _ error: Error?) -> Void) {
         let parameters: Parameters = ["episode_id": id]
         
         Alamofire.request("\(baseUrl)/episode", parameters: parameters).validate().responseDecodableObject(queue: nil, keyPath: "data", decoder: decoder, completionHandler: { (response: DataResponse<Episode>) in
-            if let error = response.error {
-                print(error.localizedDescription)
-                debugPrint(response)
-            }
-            complete(response.result.value)
+            complete(response.result.value, response.error)
         })
     }
     
-    public static func searchForCurationsBy(term: String, andCategory category: ItunesCategory? = nil, resultCount: Int = defaultResultCount, complete: @escaping (_ curations: [Curation]) -> Void) {
+    public static func searchForCurationsBy(term: String, andCategory category: ItunesCategory? = nil, resultCount: Int = defaultResultCount, complete: @escaping (_ curations: [Curation], _ error: Error?) -> Void) {
         var parameters: Parameters = ["term": term, "count": resultCount]
         if category != nil {
             parameters["category"] = category!.id
         }
         
         Alamofire.request("\(baseUrl)/search/curation", parameters: parameters).validate().responseDecodableObject(queue: nil, keyPath: "data", decoder: decoder, completionHandler: { (response: DataResponse<[Curation]>) in
-            if let error = response.error {
-                print(error.localizedDescription)
-                debugPrint(response)
-            }
-            guard let curations = response.result.value else {
-                complete([Curation]())
-                return
-            }
-            complete(curations)
+            let curations = response.result.value ?? [Curation]()
+            complete(curations, response.error)
         })
     }
     
-    public static func searchForEpisodesWith(title: String? = nil, url: String? = nil, duration: Int? = nil, podcastTitle: String? = nil, guid: String? = nil, term: String? = nil, resultCount: Int = defaultResultCount, complete: @escaping (_ episodes: [Episode]) -> Void) {
+    public static func searchForEpisodesWith(title: String? = nil, url: String? = nil, duration: Int? = nil, podcastTitle: String? = nil, guid: String? = nil, term: String? = nil, resultCount: Int = defaultResultCount, complete: @escaping (_ episodes: [Episode], _ error: Error?) -> Void) {
         var parameters: Parameters = [:]
         if title != nil {
             parameters["title"] = title!
@@ -263,19 +222,12 @@ public struct FyydKit {
         parameters["count"] = resultCount
         
         Alamofire.request("\(baseUrl)/search/episode", parameters: parameters).validate().responseDecodableObject(queue: nil, keyPath: "data", decoder: decoder, completionHandler: { (response: DataResponse<[Episode]>) in
-            if let error = response.error {
-                print(error.localizedDescription)
-                debugPrint(response)
-            }
-            guard let episodes = response.result.value else {
-                complete([Episode]())
-                return
-            }
-            complete(episodes)
+            let episodes = response.result.value ?? [Episode]()
+            complete(episodes, response.error)
         })
     }
     
-    public static func searchForPodcastsWith(title: String? = nil, url: String? = nil, term: String? = nil, resultCount: Int = defaultResultCount, complete: @escaping (_ podcasts: [Podcast]) -> Void) {
+    public static func searchForPodcastsWith(title: String? = nil, url: String? = nil, term: String? = nil, resultCount: Int = defaultResultCount, complete: @escaping (_ podcasts: [Podcast], _ error: Error?) -> Void) {
         var parameters: Parameters = [:]
         if title != nil {
             parameters["title"] = title!
@@ -289,83 +241,48 @@ public struct FyydKit {
         parameters["count"] = resultCount
         
         Alamofire.request("\(baseUrl)/search/podcast", parameters: parameters).validate().responseDecodableObject(queue: nil, keyPath: "data", decoder: decoder, completionHandler: { (response: DataResponse<[Podcast]>) in
-            if let error = response.error {
-                print(error.localizedDescription)
-                debugPrint(response)
-            }
-            guard let podcasts = response.result.value else {
-                complete([Podcast]())
-                return
-            }
-            complete(podcasts)
+            let podcasts = response.result.value ?? [Podcast]()
+            complete(podcasts, response.error)
         })
     }
     
-    public static func fetchCurationWith(id: Int, includingEpisodes: Bool = false, authToken: String? = nil, complete: @escaping (_ curation: Curation?) -> Void) {
+    public static func fetchCurationWith(id: Int, includingEpisodes: Bool = false, authToken: String? = nil, complete: @escaping (_ curation: Curation?, _ error: Error?) -> Void) {
         var headers: HTTPHeaders = [String : String]()
         if let token = authToken {
             headers["Authorization"] = "Bearer \(token)"
         }
-        
         let parameters: Parameters = ["curation_id": id]
-        
         let url = includingEpisodes ? "\(baseUrl)/curation/episodes" : "\(baseUrl)/curation"
         
         Alamofire.request(url, parameters: parameters, headers: headers).validate().responseDecodableObject(queue: nil, keyPath: "data", decoder: decoder, completionHandler: { (response: DataResponse<Curation>) in
-            if let error = response.error {
-                print(error.localizedDescription)
-                debugPrint(response)
-            }
-            complete(response.result.value)
+            complete(response.result.value, response.error)
         })
     }
     
-    public static func fetchCurationsWith(category: ItunesCategory, resultCount: Int = defaultResultCount, complete: @escaping (_ curations: [Curation]) -> Void) {
+    public static func fetchCurationsWith(category: ItunesCategory, resultCount: Int = defaultResultCount, complete: @escaping (_ curations: [Curation], _ error: Error?) -> Void) {
         let parameters: Parameters = ["category_id": category.id, "count": resultCount]
         
         Alamofire.request("\(baseUrl)/category/curation", parameters: parameters).validate().responseDecodableObject(queue: nil, keyPath: "data.curations", decoder: decoder, completionHandler: { (response: DataResponse<[Curation]>) in
-            if let error = response.error {
-                print(error.localizedDescription)
-                debugPrint(response)
-            }
-            guard let curations = response.result.value else {
-                complete([Curation]())
-                return
-            }
-            complete(curations)
+            let curations = response.result.value ?? [Curation]()
+            complete(curations, response.error)
         })
     }
     
-    public static func fetchPublicCurationsOfUserWith(id: Int, complete: @escaping (_ curations: [Curation]) -> Void) {
+    public static func fetchPublicCurationsOfUserWith(id: Int, complete: @escaping (_ curations: [Curation], _ error: Error?) -> Void) {
         Alamofire.request("\(baseUrl)/user/curations", parameters: ["user_id": id]).validate().responseDecodableObject(queue: nil, keyPath: "data", decoder: decoder, completionHandler: { (response: DataResponse<[Curation]>) in
-            if let error = response.error {
-                print(error.localizedDescription)
-                debugPrint(response)
-            }
-            guard let curations = response.result.value else {
-                complete([Curation]())
-                return
-            }
-            complete(curations)
+            let curations = response.result.value ?? [Curation]()
+            complete(curations, response.error)
         })
     }
     
-    public static func fetchAuthorizedUserCurations(authToken: String, complete: @escaping (_ curations: [Curation]) -> Void) {
-        
+    public static func fetchAuthorizedUserCurations(authToken: String, complete: @escaping (_ curations: [Curation], _ error: Error?) -> Void) {
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(authToken)"
         ]
         
         Alamofire.request("\(baseUrl)/account/curations", headers: headers).validate().responseDecodableObject(queue: nil, keyPath: "data", decoder: decoder, completionHandler: { (response: DataResponse<[Curation]>) in
-            if let error = response.error {
-                print(error.localizedDescription)
-                debugPrint(response)
-            }
-            guard let curations = response.result.value else {
-                complete([Curation]())
-                return
-            }
-            complete(curations)
+            let curations = response.result.value ?? [Curation]()
+            complete(curations, response.error)
         })
     }
 }
