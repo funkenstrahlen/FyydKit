@@ -42,7 +42,7 @@ public struct FyydKit {
     }
     
     public static func remove(episode: Episode, fromCuration curation: Curation, complete: @escaping (_ error: Error?) -> Void) {
-        guard let token = UserManager.shared.accessToken else {
+        guard let token = FyydAuthentication.shared.accessToken else {
             complete(FyydApiError.missingAccessToken)
             return
         }
@@ -67,7 +67,7 @@ public struct FyydKit {
     }
     
     public static func add(episode: Episode, toCuration curation: Curation, withMessage message: String?, complete: @escaping (_ error: Error?) -> Void) {
-        guard let token = UserManager.shared.accessToken else {
+        guard let token = FyydAuthentication.shared.accessToken else {
             complete(FyydApiError.missingAccessToken)
             return
         }
@@ -95,7 +95,7 @@ public struct FyydKit {
     }
     
     public static func fetchAuthorizedUser(complete: @escaping (_ user: User?) -> Void) {
-        guard let token = UserManager.shared.accessToken else {
+        guard let token = FyydAuthentication.shared.accessToken else {
             complete(nil)
             return
         }
@@ -136,7 +136,7 @@ public struct FyydKit {
     }
     
     public static func update(curation: Curation, coverartImage: UIImage? = nil, complete: @escaping (_ curation: Curation?) -> Void) {
-        guard let token = UserManager.shared.accessToken else {
+        guard let token = FyydAuthentication.shared.accessToken else {
             complete(nil)
             return
         }
@@ -199,7 +199,7 @@ public struct FyydKit {
             return
         }
         
-        guard let token = UserManager.shared.accessToken else {
+        guard let token = FyydAuthentication.shared.accessToken else {
             complete(nil)
             return
         }
@@ -326,7 +326,7 @@ public struct FyydKit {
     
     public static func fetchCurationWith(id: Int, includingEpisodes: Bool = false, complete: @escaping (_ curation: Curation?) -> Void) {
         var headers: HTTPHeaders = [String : String]()
-        if let token = UserManager.shared.accessToken {
+        if let token = FyydAuthentication.shared.accessToken {
             headers["Authorization"] = "Bearer \(token)"
         }
         
@@ -374,7 +374,7 @@ public struct FyydKit {
     }
     
     public static func fetchAuthorizedUserCurations(complete: @escaping (_ curations: [Curation]) -> Void) {
-        guard let token = UserManager.shared.accessToken else {
+        guard let token = FyydAuthentication.shared.accessToken else {
             complete([])
             return
         }

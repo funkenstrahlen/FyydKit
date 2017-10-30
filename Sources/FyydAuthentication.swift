@@ -14,12 +14,12 @@ public protocol FyydLoginDelegate {
 }
 
 @available(iOSApplicationExtension 11.0, *)
-public class UserManager: NSObject, SFSafariViewControllerDelegate {
+public class FyydAuthentication: NSObject, SFSafariViewControllerDelegate {
     
     private var authSession: SFAuthenticationSession?
     public var delegate: FyydLoginDelegate?
     
-    public func loginWith(clientId: String) {
+    public func loginUserWith(clientId: String) {
         let authURL = URL(string: "https://fyyd.de/oauth/authorize?client_id=\(clientId)")!
         authSession = SFAuthenticationSession(url: authURL, callbackURLScheme: nil) { (callbackUrl, error) in
             let token = self.extractTokenFrom(url: callbackUrl, withName: "token")

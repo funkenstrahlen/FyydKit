@@ -19,10 +19,10 @@
 		226F50751FA765590003234C /* ItunesCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50661FA765590003234C /* ItunesCategory.swift */; };
 		226F50761FA765590003234C /* ItunesCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50661FA765590003234C /* ItunesCategory.swift */; };
 		226F50771FA765590003234C /* ItunesCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50661FA765590003234C /* ItunesCategory.swift */; };
-		226F50781FA765590003234C /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50671FA765590003234C /* UserManager.swift */; };
-		226F50791FA765590003234C /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50671FA765590003234C /* UserManager.swift */; };
-		226F507A1FA765590003234C /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50671FA765590003234C /* UserManager.swift */; };
-		226F507B1FA765590003234C /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50671FA765590003234C /* UserManager.swift */; };
+		226F50781FA765590003234C /* FyydAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50671FA765590003234C /* FyydAuthentication.swift */; };
+		226F50791FA765590003234C /* FyydAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50671FA765590003234C /* FyydAuthentication.swift */; };
+		226F507A1FA765590003234C /* FyydAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50671FA765590003234C /* FyydAuthentication.swift */; };
+		226F507B1FA765590003234C /* FyydAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50671FA765590003234C /* FyydAuthentication.swift */; };
 		226F507C1FA765590003234C /* Curation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50681FA765590003234C /* Curation.swift */; };
 		226F507D1FA765590003234C /* Curation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50681FA765590003234C /* Curation.swift */; };
 		226F507E1FA765590003234C /* Curation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50681FA765590003234C /* Curation.swift */; };
@@ -75,7 +75,7 @@
 		226F50641FA765590003234C /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		226F50651FA765590003234C /* SubscribeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeHelper.swift; sourceTree = "<group>"; };
 		226F50661FA765590003234C /* ItunesCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItunesCategory.swift; sourceTree = "<group>"; };
-		226F50671FA765590003234C /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		226F50671FA765590003234C /* FyydAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FyydAuthentication.swift; sourceTree = "<group>"; };
 		226F50681FA765590003234C /* Curation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curation.swift; sourceTree = "<group>"; };
 		226F506A1FA765590003234C /* Podcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		226F506B1FA765590003234C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 				8933C7841EB5B820000D00A4 /* FyydKit.swift */,
 				226F508C1FA7686E0003234C /* Model */,
 				226F50651FA765590003234C /* SubscribeHelper.swift */,
-				226F50671FA765590003234C /* UserManager.swift */,
+				226F50671FA765590003234C /* FyydAuthentication.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -514,7 +514,7 @@
 				226F50741FA765590003234C /* ItunesCategory.swift in Sources */,
 				226F50701FA765590003234C /* SubscribeHelper.swift in Sources */,
 				226F50881FA765590003234C /* User.swift in Sources */,
-				226F50781FA765590003234C /* UserManager.swift in Sources */,
+				226F50781FA765590003234C /* FyydAuthentication.swift in Sources */,
 				226F50841FA765590003234C /* Podcast.swift in Sources */,
 				226F506C1FA765590003234C /* Episode.swift in Sources */,
 			);
@@ -537,7 +537,7 @@
 				226F50761FA765590003234C /* ItunesCategory.swift in Sources */,
 				226F50721FA765590003234C /* SubscribeHelper.swift in Sources */,
 				226F508A1FA765590003234C /* User.swift in Sources */,
-				226F507A1FA765590003234C /* UserManager.swift in Sources */,
+				226F507A1FA765590003234C /* FyydAuthentication.swift in Sources */,
 				226F50861FA765590003234C /* Podcast.swift in Sources */,
 				226F506E1FA765590003234C /* Episode.swift in Sources */,
 			);
@@ -552,7 +552,7 @@
 				226F50771FA765590003234C /* ItunesCategory.swift in Sources */,
 				226F50731FA765590003234C /* SubscribeHelper.swift in Sources */,
 				226F508B1FA765590003234C /* User.swift in Sources */,
-				226F507B1FA765590003234C /* UserManager.swift in Sources */,
+				226F507B1FA765590003234C /* FyydAuthentication.swift in Sources */,
 				226F50871FA765590003234C /* Podcast.swift in Sources */,
 				226F506F1FA765590003234C /* Episode.swift in Sources */,
 			);
@@ -567,7 +567,7 @@
 				226F50751FA765590003234C /* ItunesCategory.swift in Sources */,
 				226F50711FA765590003234C /* SubscribeHelper.swift in Sources */,
 				226F50891FA765590003234C /* User.swift in Sources */,
-				226F50791FA765590003234C /* UserManager.swift in Sources */,
+				226F50791FA765590003234C /* FyydAuthentication.swift in Sources */,
 				226F50851FA765590003234C /* Podcast.swift in Sources */,
 				226F506D1FA765590003234C /* Episode.swift in Sources */,
 			);
