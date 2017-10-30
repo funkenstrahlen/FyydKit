@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "FyydKit"
   s.version      = "0.1"
-  s.summary      = ""
+  s.summary      = "Swift implementation of the fyyd API"
   s.description  = <<-DESC
     Swift implementation of the fyyd API.
   DESC
