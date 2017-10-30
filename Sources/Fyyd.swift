@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import KeychainAccess
 import CodableAlamofire
 
 enum FyydApiError: Error {
