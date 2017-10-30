@@ -35,7 +35,12 @@
 		226F50891FA765590003234C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F506B1FA765590003234C /* User.swift */; };
 		226F508A1FA765590003234C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F506B1FA765590003234C /* User.swift */; };
 		226F508B1FA765590003234C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F506B1FA765590003234C /* User.swift */; };
+		3B9CAC15D1CBA1A678429AEC /* Pods_FyydKit_macOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1D55DA45FCD5990155F972 /* Pods_FyydKit_macOS_Tests.framework */; };
 		52D6D9871BEFF229002C0205 /* FyydKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* FyydKit.framework */; };
+		6B57CE565F021E63DC5041ED /* Pods_FyydKit_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E31D7797D4730F957CCA3A /* Pods_FyydKit_macOS.framework */; };
+		741B7FF57958C3F6AD723978 /* Pods_FyydKit_tvOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7226BD6FFA6975D8F7566BA6 /* Pods_FyydKit_tvOS_Tests.framework */; };
+		79A27913EF625C961B2BCC77 /* Pods_FyydKit_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FBC8A2088832CADCF89C8CA /* Pods_FyydKit_tvOS.framework */; };
+		854BFBC4374A0CB90CA4A9F2 /* Pods_FyydKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E07A4BFD54E721B707377CAB /* Pods_FyydKit_iOS.framework */; };
 		8933C7851EB5B820000D00A4 /* FyydKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* FyydKit.swift */; };
 		8933C7861EB5B820000D00A4 /* FyydKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* FyydKit.swift */; };
 		8933C7871EB5B820000D00A4 /* FyydKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* FyydKit.swift */; };
@@ -43,6 +48,8 @@
 		8933C78E1EB5B82C000D00A4 /* FyydKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* FyydKitTests.swift */; };
 		8933C78F1EB5B82C000D00A4 /* FyydKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* FyydKitTests.swift */; };
 		8933C7901EB5B82D000D00A4 /* FyydKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* FyydKitTests.swift */; };
+		C563DD311D664621E8E934F5 /* Pods_FyydKit_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3056E337A9BB3991A361775 /* Pods_FyydKit_watchOS.framework */; };
+		DA7847E794DBFFA63EB7D8C8 /* Pods_FyydKit_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B329EF620F4C58CC20663A46 /* Pods_FyydKit_iOS_Tests.framework */; };
 		DD7502881C68FEDE006590AF /* FyydKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* FyydKit.framework */; };
 		DD7502921C690C7A006590AF /* FyydKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* FyydKit.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		115E8348CC9DEFFD1F293889 /* Pods-FyydKit-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyydKit-macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-FyydKit-macOS/Pods-FyydKit-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		226F50641FA765590003234C /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		226F50651FA765590003234C /* SubscribeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeHelper.swift; sourceTree = "<group>"; };
 		226F50661FA765590003234C /* ItunesCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItunesCategory.swift; sourceTree = "<group>"; };
@@ -79,17 +87,37 @@
 		226F50681FA765590003234C /* Curation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curation.swift; sourceTree = "<group>"; };
 		226F506A1FA765590003234C /* Podcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		226F506B1FA765590003234C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3F3BEB6C1A02E47825092CAB /* Pods-FyydKit-macOS Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyydKit-macOS Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FyydKit-macOS Tests/Pods-FyydKit-macOS Tests.release.xcconfig"; sourceTree = "<group>"; };
+		417D3E1AFDE121F03D80A5C1 /* Pods-FyydKit-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyydKit-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-FyydKit-iOS/Pods-FyydKit-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		43AB58C904293AEA032250BF /* Pods-FyydKit-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyydKit-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FyydKit-macOS/Pods-FyydKit-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		4B19AEDACF1AF39788F81482 /* Pods-FyydKit-iOS Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyydKit-iOS Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FyydKit-iOS Tests/Pods-FyydKit-iOS Tests.release.xcconfig"; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* FyydKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FyydKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* FyydKit-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FyydKit-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* FyydKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FyydKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9F01BEFFFBE002C0205 /* FyydKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FyydKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6DA0F1BF000BD002C0205 /* FyydKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FyydKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E2495CE48FC7AAA02FDBA5A /* Pods-FyydKit-tvOS Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyydKit-tvOS Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FyydKit-tvOS Tests/Pods-FyydKit-tvOS Tests.release.xcconfig"; sourceTree = "<group>"; };
+		6A039340B5D02AA76C5AE46E /* Pods-FyydKit-tvOS Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyydKit-tvOS Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FyydKit-tvOS Tests/Pods-FyydKit-tvOS Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		6FBC8A2088832CADCF89C8CA /* Pods_FyydKit_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FyydKit_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7226BD6FFA6975D8F7566BA6 /* Pods_FyydKit_tvOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FyydKit_tvOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C1F9E9CDE74DD0394A2EFDF /* Pods-FyydKit-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyydKit-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FyydKit-iOS/Pods-FyydKit-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		82E31D7797D4730F957CCA3A /* Pods_FyydKit_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FyydKit_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8933C7841EB5B820000D00A4 /* FyydKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FyydKit.swift; sourceTree = "<group>"; };
 		8933C7891EB5B82A000D00A4 /* FyydKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FyydKitTests.swift; sourceTree = "<group>"; };
+		A1571897A09AB1619CDA991E /* Pods-FyydKit-watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyydKit-watchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FyydKit-watchOS/Pods-FyydKit-watchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* FyydKit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FyydKit.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* FyydKitTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FyydKitTests.plist; sourceTree = "<group>"; };
+		AE041326853D0DD21C52C216 /* Pods-FyydKit-iOS Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyydKit-iOS Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FyydKit-iOS Tests/Pods-FyydKit-iOS Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B329EF620F4C58CC20663A46 /* Pods_FyydKit_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FyydKit_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1D55DA45FCD5990155F972 /* Pods_FyydKit_macOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FyydKit_macOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB4A4CA808942FFD2F89CAB0 /* Pods-FyydKit-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyydKit-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-FyydKit-tvOS/Pods-FyydKit-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		CF6D7EC4048C55E6E0BBDEE4 /* Pods-FyydKit-watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyydKit-watchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-FyydKit-watchOS/Pods-FyydKit-watchOS.release.xcconfig"; sourceTree = "<group>"; };
 		DD75027A1C68FCFC006590AF /* FyydKit-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FyydKit-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD75028D1C690C7A006590AF /* FyydKit-tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FyydKit-tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E07A4BFD54E721B707377CAB /* Pods_FyydKit_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FyydKit_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3056E337A9BB3991A361775 /* Pods_FyydKit_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FyydKit_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6D167950ABA32D2B2383425 /* Pods-FyydKit-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyydKit-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FyydKit-tvOS/Pods-FyydKit-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		F6343B7DEB1F7C4D9C4B269D /* Pods-FyydKit-macOS Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyydKit-macOS Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FyydKit-macOS Tests/Pods-FyydKit-macOS Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				854BFBC4374A0CB90CA4A9F2 /* Pods_FyydKit_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52D6D9871BEFF229002C0205 /* FyydKit.framework in Frameworks */,
+				DA7847E794DBFFA63EB7D8C8 /* Pods_FyydKit_iOS_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C563DD311D664621E8E934F5 /* Pods_FyydKit_watchOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79A27913EF625C961B2BCC77 /* Pods_FyydKit_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B57CE565F021E63DC5041ED /* Pods_FyydKit_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD7502881C68FEDE006590AF /* FyydKit.framework in Frameworks */,
+				3B9CAC15D1CBA1A678429AEC /* Pods_FyydKit_macOS_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD7502921C690C7A006590AF /* FyydKit.framework in Frameworks */,
+				741B7FF57958C3F6AD723978 /* Pods_FyydKit_tvOS_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +195,27 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		52784A62749BF25B03E8CEE1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C1F9E9CDE74DD0394A2EFDF /* Pods-FyydKit-iOS.debug.xcconfig */,
+				417D3E1AFDE121F03D80A5C1 /* Pods-FyydKit-iOS.release.xcconfig */,
+				AE041326853D0DD21C52C216 /* Pods-FyydKit-iOS Tests.debug.xcconfig */,
+				4B19AEDACF1AF39788F81482 /* Pods-FyydKit-iOS Tests.release.xcconfig */,
+				43AB58C904293AEA032250BF /* Pods-FyydKit-macOS.debug.xcconfig */,
+				115E8348CC9DEFFD1F293889 /* Pods-FyydKit-macOS.release.xcconfig */,
+				F6343B7DEB1F7C4D9C4B269D /* Pods-FyydKit-macOS Tests.debug.xcconfig */,
+				3F3BEB6C1A02E47825092CAB /* Pods-FyydKit-macOS Tests.release.xcconfig */,
+				E6D167950ABA32D2B2383425 /* Pods-FyydKit-tvOS.debug.xcconfig */,
+				CB4A4CA808942FFD2F89CAB0 /* Pods-FyydKit-tvOS.release.xcconfig */,
+				6A039340B5D02AA76C5AE46E /* Pods-FyydKit-tvOS Tests.debug.xcconfig */,
+				5E2495CE48FC7AAA02FDBA5A /* Pods-FyydKit-tvOS Tests.release.xcconfig */,
+				A1571897A09AB1619CDA991E /* Pods-FyydKit-watchOS.debug.xcconfig */,
+				CF6D7EC4048C55E6E0BBDEE4 /* Pods-FyydKit-watchOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +223,8 @@
 				8933C7831EB5B7EB000D00A4 /* Tests */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				52D6D97D1BEFF229002C0205 /* Products */,
+				52784A62749BF25B03E8CEE1 /* Pods */,
+				735E379904B09F0D0BB185BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +249,20 @@
 				DD7502731C68FC20006590AF /* Tests */,
 			);
 			path = Configs;
+			sourceTree = "<group>";
+		};
+		735E379904B09F0D0BB185BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E07A4BFD54E721B707377CAB /* Pods_FyydKit_iOS.framework */,
+				B329EF620F4C58CC20663A46 /* Pods_FyydKit_iOS_Tests.framework */,
+				82E31D7797D4730F957CCA3A /* Pods_FyydKit_macOS.framework */,
+				CB1D55DA45FCD5990155F972 /* Pods_FyydKit_macOS_Tests.framework */,
+				6FBC8A2088832CADCF89C8CA /* Pods_FyydKit_tvOS.framework */,
+				7226BD6FFA6975D8F7566BA6 /* Pods_FyydKit_tvOS_Tests.framework */,
+				E3056E337A9BB3991A361775 /* Pods_FyydKit_watchOS.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8933C7811EB5B7E0000D00A4 /* Sources */ = {
@@ -267,10 +339,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D6D9901BEFF229002C0205 /* Build configuration list for PBXNativeTarget "FyydKit-iOS" */;
 			buildPhases = (
+				F09291941DFC30565439127B /* [CP] Check Pods Manifest.lock */,
 				52D6D9771BEFF229002C0205 /* Sources */,
 				52D6D9781BEFF229002C0205 /* Frameworks */,
 				52D6D9791BEFF229002C0205 /* Headers */,
 				52D6D97A1BEFF229002C0205 /* Resources */,
+				875E3FB9B1AF7345573F61E0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,9 +359,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D6D9931BEFF229002C0205 /* Build configuration list for PBXNativeTarget "FyydKit-iOS Tests" */;
 			buildPhases = (
+				69DC1F7B9C4EF5C08B137242 /* [CP] Check Pods Manifest.lock */,
 				52D6D9821BEFF229002C0205 /* Sources */,
 				52D6D9831BEFF229002C0205 /* Frameworks */,
 				52D6D9841BEFF229002C0205 /* Resources */,
+				30EFAC0AF2F65075476F4CFB /* [CP] Embed Pods Frameworks */,
+				FFEB0BF44C48F68420D63E0C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -303,10 +380,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D6D9E71BEFFF6E002C0205 /* Build configuration list for PBXNativeTarget "FyydKit-watchOS" */;
 			buildPhases = (
+				4BAEF14CA578EE727E9BB626 /* [CP] Check Pods Manifest.lock */,
 				52D6D9DD1BEFFF6E002C0205 /* Sources */,
 				52D6D9DE1BEFFF6E002C0205 /* Frameworks */,
 				52D6D9DF1BEFFF6E002C0205 /* Headers */,
 				52D6D9E01BEFFF6E002C0205 /* Resources */,
+				7570A3516CB8CCBE28D974F3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -321,10 +400,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D6DA011BEFFFBE002C0205 /* Build configuration list for PBXNativeTarget "FyydKit-tvOS" */;
 			buildPhases = (
+				EABE3F8A7EB0476AAB361665 /* [CP] Check Pods Manifest.lock */,
 				52D6D9EB1BEFFFBE002C0205 /* Sources */,
 				52D6D9EC1BEFFFBE002C0205 /* Frameworks */,
 				52D6D9ED1BEFFFBE002C0205 /* Headers */,
 				52D6D9EE1BEFFFBE002C0205 /* Resources */,
+				4BA1D07F728AEC447C3BB566 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -339,10 +420,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D6DA201BF000BD002C0205 /* Build configuration list for PBXNativeTarget "FyydKit-macOS" */;
 			buildPhases = (
+				66325907AA213C967A336DD6 /* [CP] Check Pods Manifest.lock */,
 				52D6DA0A1BF000BD002C0205 /* Sources */,
 				52D6DA0B1BF000BD002C0205 /* Frameworks */,
 				52D6DA0C1BF000BD002C0205 /* Headers */,
 				52D6DA0D1BF000BD002C0205 /* Resources */,
+				A7BE3E4E63EFD5D78972ED30 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -357,9 +440,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD7502821C68FCFC006590AF /* Build configuration list for PBXNativeTarget "FyydKit-macOS Tests" */;
 			buildPhases = (
+				2B04F6C2EBAD6365952E3601 /* [CP] Check Pods Manifest.lock */,
 				DD7502761C68FCFC006590AF /* Sources */,
 				DD7502771C68FCFC006590AF /* Frameworks */,
 				DD7502781C68FCFC006590AF /* Resources */,
+				1C0E58B3867FC92BC3378BD6 /* [CP] Embed Pods Frameworks */,
+				3875F9F734D705B93F933CCD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -375,9 +461,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD7502951C690C7A006590AF /* Build configuration list for PBXNativeTarget "FyydKit-tvOS Tests" */;
 			buildPhases = (
+				9C417D58BC80DD0603F7ADD1 /* [CP] Check Pods Manifest.lock */,
 				DD7502891C690C7A006590AF /* Sources */,
 				DD75028A1C690C7A006590AF /* Frameworks */,
 				DD75028B1C690C7A006590AF /* Resources */,
+				55C522D6D3B3B97C5C419DED /* [CP] Embed Pods Frameworks */,
+				A53B932B001FF591EB7BA337 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -503,6 +592,300 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C0E58B3867FC92BC3378BD6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FyydKit-macOS Tests/Pods-FyydKit-macOS Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableAlamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FyydKit-macOS Tests/Pods-FyydKit-macOS Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B04F6C2EBAD6365952E3601 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FyydKit-macOS Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30EFAC0AF2F65075476F4CFB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FyydKit-iOS Tests/Pods-FyydKit-iOS Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableAlamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FyydKit-iOS Tests/Pods-FyydKit-iOS Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3875F9F734D705B93F933CCD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FyydKit-macOS Tests/Pods-FyydKit-macOS Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BA1D07F728AEC447C3BB566 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FyydKit-tvOS/Pods-FyydKit-tvOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BAEF14CA578EE727E9BB626 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FyydKit-watchOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55C522D6D3B3B97C5C419DED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FyydKit-tvOS Tests/Pods-FyydKit-tvOS Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableAlamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FyydKit-tvOS Tests/Pods-FyydKit-tvOS Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66325907AA213C967A336DD6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FyydKit-macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69DC1F7B9C4EF5C08B137242 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FyydKit-iOS Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7570A3516CB8CCBE28D974F3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FyydKit-watchOS/Pods-FyydKit-watchOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		875E3FB9B1AF7345573F61E0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FyydKit-iOS/Pods-FyydKit-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C417D58BC80DD0603F7ADD1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FyydKit-tvOS Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A53B932B001FF591EB7BA337 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FyydKit-tvOS Tests/Pods-FyydKit-tvOS Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7BE3E4E63EFD5D78972ED30 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FyydKit-macOS/Pods-FyydKit-macOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EABE3F8A7EB0476AAB361665 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FyydKit-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F09291941DFC30565439127B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FyydKit-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFEB0BF44C48F68420D63E0C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FyydKit-iOS Tests/Pods-FyydKit-iOS Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		52D6D9771BEFF229002C0205 /* Sources */ = {
@@ -719,6 +1102,7 @@
 		};
 		52D6D9911BEFF229002C0205 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C1F9E9CDE74DD0394A2EFDF /* Pods-FyydKit-iOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -742,6 +1126,7 @@
 		};
 		52D6D9921BEFF229002C0205 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 417D3E1AFDE121F03D80A5C1 /* Pods-FyydKit-iOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -764,6 +1149,7 @@
 		};
 		52D6D9941BEFF229002C0205 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE041326853D0DD21C52C216 /* Pods-FyydKit-iOS Tests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Configs/FyydKitTests.plist;
@@ -777,6 +1163,7 @@
 		};
 		52D6D9951BEFF229002C0205 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B19AEDACF1AF39788F81482 /* Pods-FyydKit-iOS Tests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Configs/FyydKitTests.plist;
@@ -790,6 +1177,7 @@
 		};
 		52D6D9E81BEFFF6E002C0205 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1571897A09AB1619CDA991E /* Pods-FyydKit-watchOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -812,6 +1200,7 @@
 		};
 		52D6D9E91BEFFF6E002C0205 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF6D7EC4048C55E6E0BBDEE4 /* Pods-FyydKit-watchOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -835,6 +1224,7 @@
 		};
 		52D6DA021BEFFFBE002C0205 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6D167950ABA32D2B2383425 /* Pods-FyydKit-tvOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -857,6 +1247,7 @@
 		};
 		52D6DA031BEFFFBE002C0205 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB4A4CA808942FFD2F89CAB0 /* Pods-FyydKit-tvOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -880,6 +1271,7 @@
 		};
 		52D6DA211BF000BD002C0205 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43AB58C904293AEA032250BF /* Pods-FyydKit-macOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -903,6 +1295,7 @@
 		};
 		52D6DA221BF000BD002C0205 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 115E8348CC9DEFFD1F293889 /* Pods-FyydKit-macOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -927,6 +1320,7 @@
 		};
 		DD7502831C68FCFC006590AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6343B7DEB1F7C4D9C4B269D /* Pods-FyydKit-macOS Tests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -942,6 +1336,7 @@
 		};
 		DD7502841C68FCFC006590AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F3BEB6C1A02E47825092CAB /* Pods-FyydKit-macOS Tests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -958,6 +1353,7 @@
 		};
 		DD7502961C690C7A006590AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A039340B5D02AA76C5AE46E /* Pods-FyydKit-tvOS Tests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = Configs/FyydKitTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -971,6 +1367,7 @@
 		};
 		DD7502971C690C7A006590AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E2495CE48FC7AAA02FDBA5A /* Pods-FyydKit-tvOS Tests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = Configs/FyydKitTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

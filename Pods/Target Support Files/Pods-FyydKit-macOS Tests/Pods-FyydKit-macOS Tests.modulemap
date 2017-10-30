@@ -1,0 +1,6 @@
+framework module Pods_FyydKit_macOS_Tests {
+  umbrella header "Pods-FyydKit-macOS Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
