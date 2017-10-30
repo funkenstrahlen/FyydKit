@@ -27,10 +27,6 @@
 		226F507D1FA765590003234C /* Curation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50681FA765590003234C /* Curation.swift */; };
 		226F507E1FA765590003234C /* Curation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50681FA765590003234C /* Curation.swift */; };
 		226F507F1FA765590003234C /* Curation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50681FA765590003234C /* Curation.swift */; };
-		226F50801FA765590003234C /* Fyyd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50691FA765590003234C /* Fyyd.swift */; };
-		226F50811FA765590003234C /* Fyyd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50691FA765590003234C /* Fyyd.swift */; };
-		226F50821FA765590003234C /* Fyyd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50691FA765590003234C /* Fyyd.swift */; };
-		226F50831FA765590003234C /* Fyyd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F50691FA765590003234C /* Fyyd.swift */; };
 		226F50841FA765590003234C /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F506A1FA765590003234C /* Podcast.swift */; };
 		226F50851FA765590003234C /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F506A1FA765590003234C /* Podcast.swift */; };
 		226F50861FA765590003234C /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F506A1FA765590003234C /* Podcast.swift */; };
@@ -81,7 +77,6 @@
 		226F50661FA765590003234C /* ItunesCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItunesCategory.swift; sourceTree = "<group>"; };
 		226F50671FA765590003234C /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		226F50681FA765590003234C /* Curation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curation.swift; sourceTree = "<group>"; };
-		226F50691FA765590003234C /* Fyyd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fyyd.swift; sourceTree = "<group>"; };
 		226F506A1FA765590003234C /* Podcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		226F506B1FA765590003234C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* FyydKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FyydKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,7 +186,6 @@
 			children = (
 				226F50681FA765590003234C /* Curation.swift */,
 				226F50641FA765590003234C /* Episode.swift */,
-				226F50691FA765590003234C /* Fyyd.swift */,
 				226F50661FA765590003234C /* ItunesCategory.swift */,
 				226F506A1FA765590003234C /* Podcast.swift */,
 				226F50651FA765590003234C /* SubscribeHelper.swift */,
@@ -511,7 +505,6 @@
 				8933C7851EB5B820000D00A4 /* FyydKit.swift in Sources */,
 				226F50741FA765590003234C /* ItunesCategory.swift in Sources */,
 				226F50701FA765590003234C /* SubscribeHelper.swift in Sources */,
-				226F50801FA765590003234C /* Fyyd.swift in Sources */,
 				226F50881FA765590003234C /* User.swift in Sources */,
 				226F50781FA765590003234C /* UserManager.swift in Sources */,
 				226F50841FA765590003234C /* Podcast.swift in Sources */,
@@ -535,7 +528,6 @@
 				8933C7871EB5B820000D00A4 /* FyydKit.swift in Sources */,
 				226F50761FA765590003234C /* ItunesCategory.swift in Sources */,
 				226F50721FA765590003234C /* SubscribeHelper.swift in Sources */,
-				226F50821FA765590003234C /* Fyyd.swift in Sources */,
 				226F508A1FA765590003234C /* User.swift in Sources */,
 				226F507A1FA765590003234C /* UserManager.swift in Sources */,
 				226F50861FA765590003234C /* Podcast.swift in Sources */,
@@ -551,7 +543,6 @@
 				8933C7881EB5B820000D00A4 /* FyydKit.swift in Sources */,
 				226F50771FA765590003234C /* ItunesCategory.swift in Sources */,
 				226F50731FA765590003234C /* SubscribeHelper.swift in Sources */,
-				226F50831FA765590003234C /* Fyyd.swift in Sources */,
 				226F508B1FA765590003234C /* User.swift in Sources */,
 				226F507B1FA765590003234C /* UserManager.swift in Sources */,
 				226F50871FA765590003234C /* Podcast.swift in Sources */,
@@ -567,7 +558,6 @@
 				8933C7861EB5B820000D00A4 /* FyydKit.swift in Sources */,
 				226F50751FA765590003234C /* ItunesCategory.swift in Sources */,
 				226F50711FA765590003234C /* SubscribeHelper.swift in Sources */,
-				226F50811FA765590003234C /* Fyyd.swift in Sources */,
 				226F50891FA765590003234C /* User.swift in Sources */,
 				226F50791FA765590003234C /* UserManager.swift in Sources */,
 				226F50851FA765590003234C /* Podcast.swift in Sources */,
