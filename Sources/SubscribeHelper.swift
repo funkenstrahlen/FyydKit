@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 public struct SubscribeHelper {
     // do not forget to enable them in Info.plist
