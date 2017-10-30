@@ -16,4 +16,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/funkenstrahlen/FyydKit.git.git", :tag => s.version.to_s }
   s.source_files  = "Sources/**/*"
   s.frameworks  = "Foundation"
+  s.dependency "Alamofire"
+  s.dependency "CodableAlamofire"
+  s.dependency "KeychainAccess"
 end
