@@ -1,7 +1,7 @@
 # FyydKit
 
 [![CocoaPods](https://img.shields.io/cocoapods/p/FyydKit.svg)]()
-![Build Status](https://travis-ci.org/funkenstrahlen/FyydKit.svg?branch=master)](https://travis-ci.org/funkenstrahlen/FyydKit)
+[![Build Status](https://travis-ci.org/funkenstrahlen/FyydKit.svg?branch=master)](https://travis-ci.org/funkenstrahlen/FyydKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](https://img.shields.io/cocoapods/v/FyydKit.svg)](https://cocoapods.org/pods/FyydKit)
 
