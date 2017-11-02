@@ -25,8 +25,7 @@ FyydKit is an implementation of the [fyyd API](https://fyyd.de) in Swift. The co
 
 ## Installation
 
-FyydKit can be installed using [CocoaPods](http://cocoapods.org/), [Carthage](https://github.com/Carthage/Carthage), [Swift Package Manager](https://swift.org/package-manager/).
-
+FyydKit can be installed using [CocoaPods](http://cocoapods.org/), [Carthage](https://github.com/Carthage/Carthage)
 ### CocoaPods
 
 To install CocoaPods, run:
@@ -66,18 +65,6 @@ Then add the following line to your `Cartfile`:
 ```
 github "funkenstrahlen/FyydKit" ~> 1.0
 ```
-
-### Swift Package Manager
-
-Swift Package Manager requires Swift version 4.0 or higher. First, create a `Package.swift` file. It should look like:
-
-```swift
-dependencies: [
-    .Package(url: "https://github.com/funkenstrahlen/FyydKit.git", from: "1.0.0")
-]
-```
-
-`swift build` should then pull in and compile FyydKit for you to begin using.
 
 ## Configuration
 
