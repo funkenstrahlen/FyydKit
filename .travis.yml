@@ -4,8 +4,8 @@ matrix:
         - swiftlint lint --strict
         - set -o pipefail
         - xcodebuild $XCODE_ACTION $WORKSPACE -scheme "FyydKit-macOS" | xcpretty
-        - xcodebuild $XCODE_ACTION $WORKSPACE -scheme "FyydKit-iOS" -sdk iphonesimulator -destination "OS=10.0,name=iPhone 7" | xcpretty
-        - xcodebuild $XCODE_ACTION $WORKSPACE -scheme "FyydKit-tvOS" -sdk appletvsimulator -destination "OS=10.0,name=Apple TV 1080p" | xcpretty
+        - xcodebuild $XCODE_ACTION $WORKSPACE -scheme "FyydKit-iOS" -sdk iphonesimulator -destination "OS=11.0,name=iPhone 7" | xcpretty
+        - xcodebuild $XCODE_ACTION $WORKSPACE -scheme "FyydKit-tvOS" -sdk appletvsimulator -destination "OS=11.0,name=Apple TV 1080p" | xcpretty
         - xcodebuild build $WORKSPACE -scheme "FyydKit-watchOS" -sdk watchsimulator | xcpretty
       env:
         - JOB=Xcode

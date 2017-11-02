@@ -20,7 +20,7 @@ FyydKit is an implementation of the [fyyd API](https://fyyd.de) in Swift. The co
 
 ## Requirements
 
-- iOS 10.0+ / Mac OS X 10.12+ / tvOS 10.0+ / watchOS 3.0+
+- iOS 11.0+ / Mac OS X 10.12+ / tvOS 11.0+ / watchOS 4.0+
 - Xcode 9.0+
 
 ## Installation
@@ -38,7 +38,7 @@ $ gem install cocoapods
 Then create a `Podfile` with the following contents:
 
 ```ruby
-platform :ios, '10.0'
+platform :ios, '11.0'
 use_frameworks!
 
 target 'YOUR_TARGET_NAME' do
