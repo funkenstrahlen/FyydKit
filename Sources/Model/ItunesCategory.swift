@@ -33,7 +33,7 @@ public struct ItunesCategory {
     }
     public let type: ItunesCategoryType
     public var name: String {
-        let bundle = Bundle(identifier: "de.stefantrauth.Fyyd")!
+        let bundle = Bundle(identifier: "de.stefantrauth.FyydKit")!
         switch type {
         case .arts: return NSLocalizedString("arts", bundle: bundle, value: "Arts", comment: "")
         case .business: return NSLocalizedString("business", bundle: bundle, value: "Business", comment: "")

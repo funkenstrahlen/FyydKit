@@ -18,7 +18,7 @@ enum FyydKitError: Error {
 
 extension FyydKitError: LocalizedError {
     public var errorDescription: String? {
-        let bundle = Bundle(identifier: "de.stefantrauth.Fyyd")!
+        let bundle = Bundle(identifier: "de.stefantrauth.FyydKit")!
         switch self {
         case .missingId:
             return NSLocalizedString("missing id", bundle: bundle, value: "Missing element id", comment: "missing element id")
