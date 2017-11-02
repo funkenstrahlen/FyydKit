@@ -22,6 +22,8 @@ let package = Package(
         .target(
             name: "FyydKit",
             dependencies: ["CodableAlamofire"],
+            path: "Sources"
+        ),
         .testTarget(
             name: "FyydKitTests",
             dependencies: ["FyydKit"]
