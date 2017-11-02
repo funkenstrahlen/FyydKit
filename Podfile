@@ -2,7 +2,6 @@
 platform :ios, '11.0'
 
 def shared_pods
-  pod 'Alamofire'
   pod 'CodableAlamofire'
 end
 
