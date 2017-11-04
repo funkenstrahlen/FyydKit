@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "FyydKit"
   s.version      = "0.1"
-  s.summary      = ""
+  s.summary = 'API to Connect with fyyd.de web services'
   s.description  = <<-DESC
     Your description here.
   DESC
@@ -16,5 +16,4 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/funkenstrahlen/FyydKit.git.git", :tag => s.version.to_s }
   s.source_files  = "Sources/**/*"
   s.frameworks  = "Foundation"
-  s.summary = "API to Connect with fyyd.de web services"
 end
