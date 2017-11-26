@@ -81,11 +81,11 @@ public struct FyydKit {
         }
     }
     
-    public static func create(curation: Curation, coverartImage: UIImage? = nil, authToken: String, complete: @escaping (_ curation: Curation?, _ error: Error?) -> Void) {
-        update(curation: curation, coverartImage: coverartImage, authToken: authToken, complete: complete)
+    public static func create(curation: Curation, coverartImageData: Data? = nil, coverartImageMimeType: String? = "image/png" , authToken: String, complete: @escaping (_ curation: Curation?, _ error: Error?) -> Void) {
+        update(curation: curation, coverartImageData: coverartImageData, coverartImageMimeType: coverartImageMimeType, authToken: authToken, complete: complete)
     }
     
-    public static func update(curation: Curation, coverartImage: UIImage? = nil, authToken: String, complete: @escaping (_ curation: Curation?, _ error: Error?) -> Void) {
+    public static func update(curation: Curation, coverartImageData: Data? = nil, coverartImageMimeType: String? = "image/png", authToken: String, complete: @escaping (_ curation: Curation?, _ error: Error?) -> Void) {
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(authToken)"
         ]
@@ -107,14 +107,14 @@ public struct FyydKit {
         
         let url = URL(string: "\(baseUrl)/curation")!
         
-        if let image = coverartImage, let imageData = UIImagePNGRepresentation(image) {
+        if let image = coverartImageData, let mimeType = coverartImageMimeType {
             Alamofire.upload(multipartFormData: { (multipartFormData) in
                 // add parameters
                 for (key, value) in parameters {
                     multipartFormData.append(value.data(using: .utf8)!, withName: key)
                 }
                 // add image data
-                multipartFormData.append(imageData, withName: "image", fileName: "png", mimeType: "image/png")
+                multipartFormData.append(image, withName: "image", fileName: "png", mimeType: mimeType)
             }, to: url, headers: headers) { (encodingResult) in
                 switch encodingResult {
                 case .success(let upload, _, _):
