@@ -16,7 +16,7 @@ matrix:
       language: objective-c
       cache: cocoapods
     - script:
-        - swift build -Xswiftc "-target" -Xswiftc "x86_64-apple-macosx10.12"
+        - swift build
         - swift test
       env: JOB=SPM
       os: osx
