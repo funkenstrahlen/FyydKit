@@ -15,3 +15,10 @@ matrix:
       osx_image: xcode9
       language: objective-c
       cache: cocoapods
+    - script:
+        - swift build
+        - swift test
+      env: JOB=SPM
+      os: osx
+      osx_image: xcode9
+      language: objective-c
